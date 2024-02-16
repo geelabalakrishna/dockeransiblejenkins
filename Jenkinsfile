@@ -7,10 +7,16 @@ pipeline{
       DOCKER_TAG = getVersion()
     }
     stages{
+
         stage('SCM'){
             steps{
-                git credentialsId: 'github', 
-                    url: 'https://github.com/geelabalakrishna/dockeransiblejenkins.git'
+                git credentialsId: 'github', url: 'https://github.com/geelabalakrishna/dockeransiblejenkins.git'
+            }
+        }
+        stage('frist-completed'){
+            steps{
+                sh 'pwd'
+                sh 'ls -al'
             }
         }
         
